@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\CommonProject.properties" />
+  <PropertyGroup>
+    <ProjectGuid>{5B924697-4DCD-4F98-85F1-105CB84B7341}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GreenshotPlugin</RootNamespace>
+    <AssemblyName>GreenshotPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AnimatingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TaskDialog.cs" />
+    <Compile Include="Core\AbstractPlugin.cs" />
+    <Compile Include="Core\Browser\BrowserHelper.cs" />
+    <Compile Include="Core\Capturing\WindowInfo.cs" />
+    <Compile Include="Core\EditableObjectProxy.cs" />
+    <Compile Include="Core\ExportSettings.cs" />
+    <Compile Include="Core\Imaging\FastBitmap.cs" />
+    <Compile Include="Core\Communication\JSONSerializer.cs" />
+    <Compile Include="Core\Imaging\GdiExtensionMethods.cs" />
+    <Compile Include="Core\Log\Logger.cs" />
+    <Compile Include="Core\NotificationExtensions.cs" />
+    <Compile Include="Core\Settings\ExportSettingsControl.xaml.cs">
+      <DependentUpon>ExportSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Settings\SettingsHotkeyTextBox.cs" />
+    <Compile Include="Core\Settings\SettingsExtensions.cs" />
+    <Compile Include="Core\Settings\SettingsTextBox.cs" />
+    <Compile Include="Core\Settings\SettingsComboBox.cs" />
+    <Compile Include="Core\Settings\SettingsRadioButton.cs" />
+    <Compile Include="Core\Settings\SettingsCheckBox.cs" />
+    <Compile Include="Core\Settings\SettingsPage.cs" />
+    <Compile Include="Core\Settings\SettingsTreeItem.cs" />
+    <Compile Include="Core\Settings\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IEInterop\IHTMLBodyElement.cs" />
+    <Compile Include="IEInterop\IHTMLCurrentStyle.cs" />
+    <Compile Include="IEInterop\IHTMLDocument.cs" />
+    <Compile Include="IEInterop\IHTMLDocument2.cs" />
+    <Compile Include="IEInterop\IHTMLDocument3.cs" />
+    <Compile Include="IEInterop\IHTMLDocument4.cs" />
+    <Compile Include="IEInterop\IHTMLDocument5.cs" />
+    <Compile Include="IEInterop\IHTMLElement.cs" />
+    <Compile Include="IEInterop\IHTMLElement2.cs" />
+    <Compile Include="IEInterop\IHTMLElementCollection.cs" />
+    <Compile Include="IEInterop\IHTMLFrameBase.cs" />
+    <Compile Include="IEInterop\IHTMLFramesCollection2.cs" />
+    <Compile Include="IEInterop\IHTMLRect.cs" />
+    <Compile Include="IEInterop\IHTMLScreen.cs" />
+    <Compile Include="IEInterop\IHTMLScreen2.cs" />
+    <Compile Include="IEInterop\IHTMLSelectionObject.cs" />
+    <Compile Include="IEInterop\IHTMLStyle.cs" />
+    <Compile Include="IEInterop\IHTMLTxtRange.cs" />
+    <Compile Include="IEInterop\IHTMLWindow2.cs" />
+    <Compile Include="IEInterop\IHTMLWindow3.cs" />
+    <Compile Include="IEInterop\IHTMLWindow4.cs" />
+    <Compile Include="IEInterop\IWebBrowser2.cs" />
+    <Compile Include="Interop\Base.cs" />
+    <Compile Include="Interop\ComProgIdAttribute.cs" />
+    <Compile Include="Interop\COMWrapper.cs" />
+    <Compile Include="Interop\IAppVisibility.cs" />
+    <Compile Include="Interop\IDispatch.cs" />
+    <Compile Include="Interop\IOleWindow.cs" />
+    <Compile Include="Interop\IOleCommandTarget.cs" />
+    <Compile Include="Interop\IServiceProvider.cs" />
+    <Compile Include="Controls\ExtendedWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FormWithoutActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotColumnSorter.cs" />
+    <Compile Include="Controls\GreenshotComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\BackgroundForm.Designer.cs">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IGreenshotConfigBindable.cs" />
+    <Compile Include="Controls\IGreenshotLanguageBindable.cs" />
+    <Compile Include="Controls\GreenshotToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolStripLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GreenshotToolDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OAuthLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\OAuthLoginForm.Designer.cs">
+      <DependentUpon>OAuthLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PleaseWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\PleaseWaitForm.Designer.cs">
+      <DependentUpon>PleaseWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QualityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\QualityDialog.Designer.cs">
+      <DependentUpon>QualityDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SaveImageFileDialog.cs" />
+    <Compile Include="Controls\ThumbnailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\AbstractDestination.cs" />
+    <Compile Include="Core\AbstractProcessor.cs" />
+    <Compile Include="Core\AccessibleHelper.cs" />
+    <Compile Include="Core\AnimationHelpers.cs" />
+    <Compile Include="Core\BinaryStructHelper.cs" />
+    <Compile Include="Core\Cache.cs" />
+    <Compile Include="Core\ClipboardHelper.cs" />
+    <Compile Include="Core\CoreConfiguration.cs" />
+    <Compile Include="Core\CredentialsHelper.cs" />
+    <Compile Include="Core\Imaging\Effects.cs" />
+    <Compile Include="Core\EncryptionHelper.cs" />
+    <Compile Include="Core\FilenameHelper.cs" />
+    <Compile Include="Core\Imaging\ImageOutput.cs" />
+    <Compile Include="Core\InterfaceUtils.cs" />
+    <Compile Include="Core\EmailConfigHelper.cs" />
+    <Compile Include="Core\GreenshotResources.cs" />
+    <Compile Include="Core\Browser\IEHelper.cs" />
+    <Compile Include="Core\Imaging\ImageHelper.cs" />
+    <Compile Include="Core\Language.cs" />
+    <Compile Include="Core\Log\LogHelper.cs" />
+    <Compile Include="Core\NetworkHelper.cs" />
+    <Compile Include="Core\Communication\OAuthHelper.cs" />
+    <Compile Include="Core\Objects.cs" />
+    <Compile Include="Core\PluginUtils.cs" />
+    <Compile Include="Core\Imaging\QuantizerHelper.cs" />
+    <Compile Include="Core\Communication\SourceForgeHelper.cs" />
+    <Compile Include="Core\Capturing\WindowCapture.cs" />
+    <Compile Include="Core\Capturing\WindowsHelper.cs" />
+    <Compile Include="IniFile\IniAttributes.cs" />
+    <Compile Include="IniFile\IniConfig.cs" />
+    <Compile Include="IniFile\IniReader.cs" />
+    <Compile Include="IniFile\IniSection.cs" />
+    <Compile Include="IniFile\IniValue.cs" />
+    <Compile Include="Interfaces\Capture.cs" />
+    <Compile Include="Interfaces\Drawing\Container.cs" />
+    <Compile Include="Interfaces\Forms\ImageEditor.cs" />
+    <Compile Include="Interfaces\Generic.cs" />
+    <Compile Include="Interfaces\IDestination.cs" />
+    <Compile Include="Interfaces\IProcessor.cs" />
+    <Compile Include="Interfaces\Plugin\PluginInterfaces.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Capturing\WinEventHook.cs" />
+    <Compile Include="UnmanagedHelpers\ModernUI.cs" />
+    <Compile Include="WPF\Converter\HasEnumValueConverter.cs" />
+    <Compile Include="WPF\Converter\ImageConverter.cs" />
+    <Compile Include="WPF\Converter\BoolToFontWeightConverter.cs" />
+    <Compile Include="WPF\Converter\OrBooleanConverter.cs" />
+    <Compile Include="WPF\Converter\ValueConverterGroup.cs" />
+    <Compile Include="WPF\DragDrop\DragDropHelper.cs" />
+    <Compile Include="WPF\DragDrop\DraggedAdorner.cs" />
+    <Compile Include="WPF\DragDrop\InsertionAdorner.cs" />
+    <Compile Include="WPF\DragDrop\Utilities.cs" />
+    <Compile Include="WPF\EnumDisplayer.cs" />
+    <Compile Include="WPF\Converter\InverseBooleanConverter.cs" />
+    <Compile Include="WPF\Language\ITranslationProvider.cs" />
+    <Compile Include="WPF\Converter\AndBooleanConverter.cs" />
+    <Compile Include="WPF\Converter\ColorConverter.cs" />
+    <Compile Include="WPF\Language\LanguageChangedEventManager.cs" />
+    <Compile Include="WPF\Language\LanguageXMLTranslationProvider.cs" />
+    <Compile Include="WPF\Language\TranslateExtension.cs" />
+    <Compile Include="WPF\Language\TranslationData.cs" />
+    <Compile Include="WPF\Language\TranslationManager.cs" />
+    <Compile Include="UnmanagedHelpers\DWM.cs" />
+    <Compile Include="UnmanagedHelpers\Enumerations.cs" />
+    <Compile Include="UnmanagedHelpers\GDI32.cs" />
+    <Compile Include="UnmanagedHelpers\GDIplus.cs" />
+    <Compile Include="UnmanagedHelpers\Kernel32.cs" />
+    <Compile Include="UnmanagedHelpers\PsAPI.cs" />
+    <Compile Include="UnmanagedHelpers\Shell32.cs" />
+    <Compile Include="UnmanagedHelpers\Structs.cs" />
+    <Compile Include="UnmanagedHelpers\User32.cs" />
+    <Compile Include="UnmanagedHelpers\Win32Errors.cs" />
+    <None Include="Properties\AssemblyInfo.cs.template" />
+    <EmbeddedResource Include="Core\GreenshotResources.resx">
+      <DependentUpon>GreenshotResources.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\Drawing\Filters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Core\Settings\ExportSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Core\Settings\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Core\Settings\arrow-180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Core\Settings\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF\Greenshot.ico" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<language description="မြန်မာစာ" ietf="my-MM" version="1.0" languagegroup="b">
+	<resources>
+		<resource name="about_bugs">မှားယွင်းချက်များကိုတင်ပြရန်-</resource>
+		<resource name="about_donations">Greenshot ကိုနှစ်သက်တယ်ဆိုရင်၊ ကျွန်ုပ်တို့ကိုအထောက်အပံ့ပေးရန်ကြိုဆိုပါတယ်-:</resource>
+		<resource name="about_host">Greenshot is hosted by sourceforge.net at</resource>
+		<resource name="about_icons">Icons from Yusuke Kamiyamane's Fugue icon set (Creative Commons Attribution 3.0 license)</resource>
+		<resource name="about_license">Copyright (C) 2007-2013 Thomas Braun, Jens Klingen, Robin Krom
+Greenshot comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions.
+Details about the GNU General Public License:</resource>
+		<resource name="about_title">Greenshot အကြောင်း</resource>
+		<resource name="application_title">Greenshot - the revolutionary screenshot utility</resource>
+		<resource name="bugreport_cancel">ပိတ်ပါ</resource>
+		<resource name="bugreport_info">Sorry, an unexpected error occured.
+
+The good news is: you can help us getting rid of it by filing a bug report.
+Please visit the URL below, create a new bug report and paste the contents from the text area into the description.
+
+Please add a meaningful summary and enclose any information you consider to be helpful for reproducing the issue.
+Also, we would highly appreciate if you checked whether a tracker item already exists for this bug. (You can use the search to find those quickly.) Thank you :)</resource>
+		<resource name="bugreport_title">အမှားအယွင်း</resource>
+		<resource name="CANCEL">ရုပ်သိမ်းပါ</resource>
+		<resource name="clipboard_error">An unexpected error occured while writing to the clipboard.</resource>
+		<resource name="clipboard_inuse">Greenshot wasn't able to write to the clipboard as the process {0} blocked the access.</resource>
+		<resource name="clipboard_noimage">ယာယီမှတ်သားရုပ်ပုံကိုရှာလို့မရပါ</resource>
+		<resource name="ClipboardFormat.BITMAP">Windows Bitmap</resource>
+		<resource name="ClipboardFormat.DIB">Device Independend Bitmap (DIB)</resource>
+		<resource name="ClipboardFormat.HTML">HTML</resource>
+		<resource name="ClipboardFormat.HTMLDATAURL">HTML with inline images</resource>
+		<resource name="ClipboardFormat.PNG">PNG</resource>
+		<resource name="colorpicker_alpha">Alpha</resource>
+		<resource name="colorpicker_apply">Apply</resource>
+		<resource name="colorpicker_blue">အပြာ</resource>
+		<resource name="colorpicker_green">အစိမ်း</resource>
+		<resource name="colorpicker_htmlcolor">HTML အရောင်</resource>
+		<resource name="colorpicker_recentcolors">လက်တလောသုံးအရောင်များ</resource>
+		<resource name="colorpicker_red">အနီ</resource>
+		<resource name="colorpicker_title">အရောင်ရွေးချယ်စရာ</resource>
+		<resource name="colorpicker_transparent">ထွင်းဖောက်မြင်</resource>
+		<resource name="com_rejected">The destination {0} rejected Greenshot access, probably a dialog is open. Close the dialog and try again.</resource>
+		<resource name="com_rejected_title">Greenshot access rejected</resource>
+		<resource name="config_unauthorizedaccess_write">Could not save Greenshot's configuration file. Please check access permissions for '{0}'.</resource>
+		<resource name="contextmenu_about">Greenshot အကြောင်း</resource>
+		<resource name="contextmenu_capturearea">ပုံဖမ်းနယ်ပယ်</resource>
+		<resource name="contextmenu_captureclipboard">ယာယီမှတ်သားဘုတ်မှရုပ်ပုံကိုဖွင့်ရန်</resource>
+		<resource name="contextmenu_capturefullscreen">မျက်နှာပြင်ပြည့်ဖမ်းပါ</resource>
+		<resource name="contextmenu_capturefullscreen_all">အားလုံး</resource>
+		<resource name="contextmenu_capturefullscreen_bottom">bottom</resource>
+		<resource name="contextmenu_capturefullscreen_left">left</resource>
+		<resource name="contextmenu_capturefullscreen_right">right</resource>
+		<resource name="contextmenu_capturefullscreen_top">top</resource>
+		<resource name="contextmenu_captureie">Capture Internet Explorer</resource>
+		<resource name="contextmenu_captureiefromlist">Capture Internet Explorer from list</resource>
+		<resource name="contextmenu_capturelastregion">နောက်ဆုံးဖမ်းခဲ့သောနယ်ပယ်ကိုပုံရိပ်ဖမ်းရန်</resource>
+		<resource name="contextmenu_capturewindow">ပုံဖမ်းဝင်းဒိုး</resource>
+		<resource name="contextmenu_capturewindowfromlist">စာရင်းမှဝင်းဒိုးများကိုပုံရိပ်ဖမ်းပါ</resource>
+		<resource name="contextmenu_donate">Greenshot ကိုထောက်ပံ့ကူညီပါ</resource>
+		<resource name="contextmenu_exit">ထွက်ရန်</resource>
+		<resource name="contextmenu_help">အကူညီ</resource>
+		<resource name="contextmenu_openfile">ဖိုင်မှရုပ်ပုံကိုဖွင့်ရန်</resource>
+		<resource name="contextmenu_openrecentcapture">နောက်ဆုံးပုံရိပ်ဖမ်းခဲ့သောနေရာကိုဖွင့်ပါ</resource>
+		<resource name="contextmenu_quicksettings">အမြန်ဦးစားပေးချက်များ</resource>
+		<resource name="contextmenu_settings">ဦးစားပေးချက်များ...</resource>
+		<resource name="destination_exportfailed">Error while exporting to {0}. Please try again.</resource>
+		<resource name="editor_align_bottom">Bottom</resource>
+		<resource name="editor_align_center">Center</resource>
+		<resource name="editor_align_horizontal">Horizontal alignment</resource>
+		<resource name="editor_align_left">Left</resource>
+		<resource name="editor_align_middle">Middle</resource>
+		<resource name="editor_align_right">Right</resource>
+		<resource name="editor_align_top">Top</resource>
+		<resource name="editor_align_vertical">Vertical alignment</resource>
+		<resource name="editor_arrange">စီရန်</resource>
+		<resource name="editor_arrowheads">မြှားခေါင်းများ</resource>
+		<resource name="editor_arrowheads_both">နှစ်ခုစလုံး</resource>
+		<resource name="editor_arrowheads_end">ဆုံးမှတ်</resource>
+		<resource name="editor_arrowheads_none">ဘာမှမရှိ</resource>
+		<resource name="editor_arrowheads_start">စမှတ်</resource>
+		<resource name="editor_autocrop">အလိုအလျောက်ဖြတ်ချရန်</resource>
+		<resource name="editor_backcolor">အရောင်ဖြည့်ရန်</resource>
+		<resource name="editor_blur_radius">Blur radius</resource>
+		<resource name="editor_bold">အထူ</resource>
+		<resource name="editor_border">ဘောင်</resource>
+		<resource name="editor_brightness">တောက်ပနှုန်း</resource>
+		<resource name="editor_cancel">ရုပ်သိမ်းပါ</resource>
+		<resource name="editor_clipboardfailed">Error while accessing the clipboard. Please try again.</resource>
+		<resource name="editor_close">ပိတ်ပါ</resource>
+		<resource name="editor_close_on_save">မျက်နှာပြင်ပုံရိပ်ကိုသိမ်းဆည်းချင်ပါသလား?</resource>
+		<resource name="editor_close_on_save_title">ရုပ်ပုံကိုသိမ်းမလား?</resource>
+		<resource name="editor_confirm">အတည်ပြုပါ</resource>
+		<resource name="editor_copyimagetoclipboard">ရုပ်ပုံကိုယာယီမှတ်သားဘုတ်သို့ကူးယူပါ</resource>
+		<resource name="editor_copypathtoclipboard">လမ်းကြောင်းကိုယာယီမှတ်သားဘုတ်သို့ကူးယူပါ</resource>
+		<resource name="editor_copytoclipboard">ကူးယူ</resource>
+		<resource name="editor_crop">ဖြတ်ချ (C)</resource>
+		<resource name="editor_cursortool">ရွေးချယ်တန်ဆာ (ESC)</resource>
+		<resource name="editor_cuttoclipboard">ဖြတ်ယူ</resource>
+		<resource name="editor_deleteelement">ဖျက်ပစ်</resource>
+		<resource name="editor_downonelevel">Down one level</resource>
+		<resource name="editor_downtobottom">Down to bottom</resource>
+		<resource name="editor_drawarrow">မြှားပုံဆွဲရန် (A)</resource>
+		<resource name="editor_drawellipse">စက်ဝိုင်းပုံဆွဲရန် (E)</resource>
+		<resource name="editor_drawfreehand">လက်လွတ်ဆွဲရန် (F)</resource>
+		<resource name="editor_drawhighlighter">Highlight (H)</resource>
+		<resource name="editor_drawline">မျဉ်းကြောင်းဆွဲရန် (L)</resource>
+		<resource name="editor_drawrectangle">စတုဂံပုံဆွဲရန် (R)</resource>
+		<resource name="editor_drawtextbox">စာသားပုံးဆွဲရန် (T)</resource>
+		<resource name="editor_dropshadow_darkness">အရိပ်မည်းမှောင်မှု</resource>
+		<resource name="editor_dropshadow_offset">Shadow offset</resource>
+		<resource name="editor_dropshadow_settings">အောက်ခံအရိပ်ချိန်ညှိချက်များ</resource>
+		<resource name="editor_dropshadow_thickness">အရိပ်အထူ</resource>
+		<resource name="editor_duplicate">ရွေးချယ်ထားသောအရာကိုနှစ်ခုပွားပါ</resource>
+		<resource name="editor_edit">တည်းဖြတ်</resource>
+		<resource name="editor_effects">အထူးပြုလုပ်ချက်များ</resource>
+		<resource name="editor_email">အီးမေးလ်</resource>
+		<resource name="editor_file">ဖိုင်</resource>
+		<resource name="editor_fontsize">အရွယ်စား</resource>
+		<resource name="editor_forecolor">မျဉ်းအရောင်</resource>
+		<resource name="editor_grayscale">ခဲစကေး</resource>
+		<resource name="editor_highlight_area">Highlight area</resource>
+		<resource name="editor_highlight_grayscale">Grayscale</resource>
+		<resource name="editor_highlight_magnify">မှန်ဘီလူး</resource>
+		<resource name="editor_highlight_mode">Highlight mode</resource>
+		<resource name="editor_highlight_text">Highlight text</resource>
+		<resource name="editor_image_shadow">အောက်ခံအရိပ်</resource>
+		<resource name="editor_imagesaved">{0}သို့ရုပ်ပုံကိုသိမ်းပြီးပြီ</resource>
+		<resource name="editor_insertwindow">ဝင်းဒိုးထည့်သွင်းပါ</resource>
+		<resource name="editor_invert">ဆန့်ကျင်ဘက်</resource>
+		<resource name="editor_italic">တစောင်း</resource>
+		<resource name="editor_load_objects">ပုံဝတ္ထုများကိုဖိုင်မှဆွဲတင်ရန်</resource>
+		<resource name="editor_magnification_factor">Magnification factor</resource>
+		<resource name="editor_match_capture_size">Match capture size</resource>
+		<resource name="editor_obfuscate">Obfuscate (O)</resource>
+		<resource name="editor_obfuscate_blur">Blur</resource>
+		<resource name="editor_obfuscate_mode">Obfuscation mode</resource>
+		<resource name="editor_obfuscate_pixelize">Pixelize</resource>
+		<resource name="editor_object">ပုံဝတ္ထုများ</resource>
+		<resource name="editor_opendirinexplorer">Windows Explorer တွင်တည်ရှိလမ်းကြောင်းကိုဖွင့်ပါ</resource>
+		<resource name="editor_pastefromclipboard">လွတ်ချပါ</resource>
+		<resource name="editor_pixel_size">ပစ်စဲအရွယ်စား</resource>
+		<resource name="editor_preview_quality">နမူနာအရည်သွေး</resource>
+		<resource name="editor_print">ပုံနှိပ်ရန်</resource>
+		<resource name="editor_redo">Redo {0}</resource>
+		<resource name="editor_resetsize">အရွယ်စားကိုပြန်လည်သတ်မှတ်ပါ</resource>
+		<resource name="editor_resize_percent">ရာခိုင်နှုန်း</resource>
+		<resource name="editor_resize_pixel">ပစ်စဲလ်</resource>
+		<resource name="editor_rotateccw">နာရီလက်တံ၏ဆန့်ကျင့်အတိုင်းလှည့်ပါ (Control + ,)</resource>
+		<resource name="editor_rotatecw">နာရီလက်တံအတိုင်းလှည့်ပါ (Control + .)</resource>
+		<resource name="editor_save">သိမ်းပါ</resource>
+		<resource name="editor_save_objects">ဖိုင်အဖြစ်သိမ်းရန်</resource>
+		<resource name="editor_saveas">ပုံစံအသစ်ဖြင့်သိမ်းရန်...</resource>
+		<resource name="editor_selectall">အားလုံးကိုရွေးပါ</resource>
+		<resource name="editor_senttoprinter">ပုံနှိပ်အလုပ်ကို '{0}' သို့ပို့လိုက်ပြီ။</resource>
+		<resource name="editor_shadow">အောက်ခံအရိပ်</resource>
+		<resource name="editor_storedtoclipboard">Image stored to clipboard.</resource>
+		<resource name="editor_thickness">မျဉ်းအထူ</resource>
+		<resource name="editor_title">Greenshot ရုပ်ပုံအယ်ဒီတာ</resource>
+		<resource name="editor_torn_edge">Torn edge</resource>
+		<resource name="editor_tornedge_horizontaltoothrange">Horizontal tooth range</resource>
+		<resource name="editor_tornedge_settings">Torn edges settings</resource>
+		<resource name="editor_tornedge_toothsize">ခေါင်းအရွယ်စား</resource>
+		<resource name="editor_tornedge_verticaltoothrange">Vertical tooth range</resource>
+		<resource name="editor_undo">Undo {0}</resource>
+		<resource name="editor_uponelevel">Up one level</resource>
+		<resource name="editor_uptotop">Up to top</resource>
+		<resource name="EmailFormat.MAPI">MAPI client</resource>
+		<resource name="EmailFormat.OUTLOOK_HTML">Outlook with HTML</resource>
+		<resource name="EmailFormat.OUTLOOK_TXT">Outlook with text</resource>
+		<resource name="error">အမှားအယွင်း</resource>
+		<resource name="error_multipleinstances">An instance of Greenshot is already running.</resource>
+		<resource name="error_nowriteaccess">{0} တွင်ဖိုင်ကိုသိမ်းလို့မရပါ။
+ကျေးဇူးပြု၍ရွေးချယ်ထားသောသိုလှောင်ခန်းသည် အချက်အလက်ရေးမှတ်နိုင်ခွင့်ရှိမရှိကိုစစ်ဆေးပါ။</resource>
+		<resource name="error_openfile">ဖိုင် "{0}" ကိုဖွင့်လို့မရပါ</resource>
+		<resource name="error_openlink">ချိတ်ဆက်လမ်းကြောင်း '{0}' ကိုဖွင့်လို့မရပါ။</resource>
+		<resource name="error_save">မျက်နှာပြင်ပုံရိပ်ကိုသိမ်းလို့မရပါ၊ ကျေးဇူးပြု၍သင့်တော်သောနေရာကိုရွေးပေးပါ။</resource>
+		<resource name="expertsettings">အဆင့်မြင့်</resource>
+		<resource name="expertsettings_autoreducecolors">Create an 8-bit image if the colors are less than 256 while having a &gt; 8 bits image</resource>
+		<resource name="expertsettings_checkunstableupdates">Check for unstable updates</resource>
+		<resource name="expertsettings_clipboardformats">ယာယီမှတ်သားဘုတ်ဖော်မတ်</resource>
+		<resource name="expertsettings_counter">The number for the ${NUM} in the filename pattern</resource>
+		<resource name="expertsettings_enableexpert">ငါဘာလုပ်နေတယ်ဆိုတာငါသိတယ်!</resource>
+		<resource name="expertsettings_footerpattern">Printer footer pattern</resource>
+		<resource name="expertsettings_minimizememoryfootprint">Minimize memory footprint, but with a performance penalty (not advised).</resource>
+		<resource name="expertsettings_optimizeforrdp">Make some optimizations for usage with remote desktop</resource>
+		<resource name="expertsettings_reuseeditorifpossible">Reuse editor if possible</resource>
+		<resource name="expertsettings_suppresssavedialogatclose">Suppress the save dialog when closing the editor</resource>
+		<resource name="expertsettings_thumbnailpreview">Show window thumbnails in context menu (for Vista and windows 7)</resource>
+		<resource name="exported_to">Exported to: {0}</resource>
+		<resource name="exported_to_error">An error occured while exporting to {0}:</resource>
+		<resource name="help_title">Greenshot အကူညီ</resource>
+		<resource name="hotkeys">Hotkeys</resource>
+		<resource name="jpegqualitydialog_choosejpegquality">ကျေးဇူးပြု၍သင့်ရုပ်ပုံအတွက် JPEG အရည်အသွေးကိုရွေးချယ်ပါ။</resource>
+		<resource name="OK">ကောင်းပြီ</resource>
+		<resource name="print_error">An error ocurred while trying to print.</resource>
+		<resource name="printoptions_allowcenter">Center printout on page</resource>
+		<resource name="printoptions_allowenlarge">Enlarge printout to fit paper size</resource>
+		<resource name="printoptions_allowrotate">Rotate printout to page orientation</resource>
+		<resource name="printoptions_allowshrink">Shrink printout to fit paper size</resource>
+		<resource name="printoptions_colors">အရောင်ချိန်ညှိချက်များ</resource>
+		<resource name="printoptions_dontaskagain">ရွေးပိုင်ခွင့်များကိုပင်တိုင်အဖြစ်သိမ်းပါ၊ နောက်တစ်ခါမမေးပါနှင့်</resource>
+		<resource name="printoptions_inverted">ပြောင်းပြန်အရောင်ဖြင့်ပုံနှိပ်ပါ</resource>
+		<resource name="printoptions_layout">စာမျက်နှာအခင်းအကျင်းဆိုင်ရာချိန်ညှိချက်</resource>
+		<resource name="printoptions_printcolor">အရောင်စုံပုံနှိပ်ပါ</resource>
+		<resource name="printoptions_printgrayscale">ခဲစကေးပုံနှိပ်ခြင်းကိုလုပ်ပါ</resource>
+		<resource name="printoptions_printmonochrome">အဖြု/အမည်းပုံနှိပ်ခြင်းကိုလုပ်ပါ</resource>
+		<resource name="printoptions_timestamp">စာမျက်နှာအောက်ခြေတွင် နေ့စွဲ/အချိန်ကိုပါထည့်ပုံနှိပ်ပါ</resource>
+		<resource name="printoptions_title">ဂရင်းရှော့ပုံနှိပ်ခြင်းဆိုင်ရာရွေးပိုင်ခွင့်များ</resource>
+		<resource name="qualitydialog_dontaskagain">အခြေခံအရည်သွေးအတိုင်းသိမ်းဆည်းပြီး နောက်တစ်ကြိမ်းထပ်မမေးပါနဲ့</resource>
+		<resource name="qualitydialog_title">ဂရင်းရှော့အရည်အသွေး</resource>
+		<resource name="quicksettings_destination_file">တိုက်ရိုက်သိမ်းပါ (ကြိုင်တင်ချိန်ညှိချက်ပေးထားသည့်အတိုင်း)</resource>
+		<resource name="settings_alwaysshowprintoptionsdialog">ရုပ်ပုံတစ်ပုံကိုပုံနှိပ်တိုင်းပုံနှိပ်ခြင်းဆိုင်ရာရွေးပိုင်ခွင့်များကိုပြပါ</resource>
+		<resource name="settings_alwaysshowqualitydialog">ရုပ်ပုံတစ်ပုံသိမ်းဆည်းတိုင်းအရည်အသွေးဒိုင်ယာလော့ဂ်ကိုပြပါ</resource>
+		<resource name="settings_applicationsettings">အပ်ပလီဂေးရှင်းချိန်ညှိချက်များ</resource>
+		<resource name="settings_autostartshortcut">ကွန်ပျူတာဖွင့်သည်နှင့် ဂရင်းရှော့ကိုအလုပ်လုပ်စေပါ</resource>
+		<resource name="settings_capture">ပုံရိပ်ဖမ်းခြင်း</resource>
+		<resource name="settings_capture_mousepointer">မောက်စ်ပွိုင့်တာကိုပုံဖမ်းပါ</resource>
+		<resource name="settings_capture_windows_interactive">Use interactive window capture mode</resource>
+		<resource name="settings_checkperiod">Update check interval in days (0=no check)</resource>
+		<resource name="settings_configureplugin">ပုံစံချရန်</resource>
+		<resource name="settings_copypathtoclipboard">ရုပ်ပုံတစ်ပုံသိမ်းသည့်အခါတိုင်းဖိုင်လမ်းကြောင်းကိုယာယီမှတ်သားဘုတ်သို့ကူးယူပါ</resource>
+		<resource name="settings_destination">ရည်ရွယ်ရာ</resource>
+		<resource name="settings_destination_clipboard">ယာယီမှတ်သားဘုတ်သို့ကူးပို့ပါ</resource>
+		<resource name="settings_destination_editor">ရုပ်ပုံအယ်ဒီတာတွင်ဖွင့်ပါ</resource>
+		<resource name="settings_destination_email">အီးမေးလ်</resource>
+		<resource name="settings_destination_file">တိုက်ရိုက်သိမ်းရန် (အောက်မှချိန်ညှိချက်များအသုံးပြု၍)</resource>
+		<resource name="settings_destination_fileas">ပုံစံအသစ်ဖြင့်သိမ်းရန် (ဒိုင်ယာလော့ဂ်ကိုပြလျှက်)</resource>
+		<resource name="settings_destination_picker">ဦးတည်ရာကိုရွေးချယ်ရန်</resource>
+		<resource name="settings_destination_printer">ပုံနှိပ်စက်ထံပေးပို့ပါ</resource>
+		<resource name="settings_editor">အယ်ဒီတာ</resource>
+		<resource name="settings_filenamepattern">ဖိုင်အမည်ပတ်တမ်</resource>
+		<resource name="settings_general">အထွေထွေ</resource>
+		<resource name="settings_iecapture">Internet Explorer capture</resource>
+		<resource name="settings_jpegquality">JPEG အရည်သွေး</resource>
+		<resource name="settings_language">ဘာသာစကား</resource>
+		<resource name="settings_message_filenamepattern">The following placeholders will be replaced automatically in the pattern defined:
+${YYYY} year, 4 digits
+${MM} month, 2 digits
+${DD} day, 2 digits
+${hh} hour, 2 digits
+${mm} minute, 2 digits
+${ss} second, 2 digits
+${NUM} incrementing number, 6 digits
+${title} Window title
+${user} Windows user
+${domain} Windows domain
+${hostname} PC name
+
+You can also have Greenshot create directories dynamically, simply use the backslash symbol (\) to separate folders and filename.
+Example: the pattern ${YYYY}-${MM}-${DD}\${hh}-${mm}-${ss}
+will generate a folder for the current day in your default storage location, e.g. 2008-06-29, the contained screenshot file's name will be based on the current
+time, e.g. 11_58_32 (plus extension defined in the settings)</resource>
+		<resource name="settings_network">ကွန်ရက်နှင့်အပ်ဒိတ်များ</resource>
+		<resource name="settings_output">အထွက်ပုံစံ</resource>
+		<resource name="settings_playsound">ကင်မရာအသံထွက်စေပါ</resource>
+		<resource name="settings_plugins">ဖြည့်စွက်ကိရိယာများ</resource>
+		<resource name="settings_plugins_createdby">ဖန်တီးသူ</resource>
+		<resource name="settings_plugins_dllpath">DLL လမ်းကြောင်း</resource>
+		<resource name="settings_plugins_name">အမည်</resource>
+		<resource name="settings_plugins_version">ဗားရှင်း</resource>
+		<resource name="settings_preferredfilesettings">ဦးစားပေးအထွက်ဖိုင်ပုံစံချိန်ညှိချက်များ</resource>
+		<resource name="settings_primaryimageformat">ရုပ်ပုံဖော်မတ်</resource>
+		<resource name="settings_printer">ပုံနှိပ်စက်</resource>
+		<resource name="settings_printoptions">ပုံနှိပ်ခြင်းဆိုင်ရာရွေးပိုင်ခွင့်များ</resource>
+		<resource name="settings_qualitysettings">အရည်အသွေးဆိုင်ရာချိန်ညှိချက်များ</resource>
+		<resource name="settings_reducecolors">Reduce the amount of colors to a maximum of 256</resource>
+		<resource name="settings_registerhotkeys">Register Hotkeys</resource>
+		<resource name="settings_showflashlight">ဖလက်ရှ်မီးကိုပြပါ</resource>
+		<resource name="settings_shownotify">အသိပေးချက်များကိုပြပါ</resource>
+		<resource name="settings_storagelocation">သိုလှောင်မှုတည်နေရာ</resource>
+		<resource name="settings_title">ချိန်ညှိချက်များ</resource>
+		<resource name="settings_tooltip_filenamepattern">Pattern used for generating filenames when saving screenshots</resource>
+		<resource name="settings_tooltip_language">ဂရင်းရှော့သုံးသူဘာသာစကား</resource>
+		<resource name="settings_tooltip_primaryimageformat">အခြေခံအားဖြင့်သုံးသောရုပ်ပုံဖော်မတ်</resource>
+		<resource name="settings_tooltip_registerhotkeys">Defines whether the shortcuts Prnt, Ctrl + Print, Alt + Prnt are reserved for global use by Greenshot at program startup, until the program is shut down.</resource>
+		<resource name="settings_tooltip_storagelocation">အခြေခံအားဖြင့် မျက်နှာပြင်ပုံရိပ်များကိုသိမ်းရန်တည်နေရာ (သင့်ဒက်စတော့ပ်ပေါ်တွင်သိမ်းဆည်းရန် အလွတ်သာထားခဲ့ပါ)</resource>
+		<resource name="settings_usedefaultproxy">မူလစနစ်ဘရောဆီကိုသုံးပါ</resource>
+		<resource name="settings_visualization">အထူးပြုလုပ်ချက်များ</resource>
+		<resource name="settings_waittime">ပုံရိပ်မဖမ်းခင်စောင့်ဆိုင်းရန်မီလီစက္ကန့်</resource>
+		<resource name="settings_window_capture_mode">ဝင်းဒိုးပုံဖမ်းနည်းနာ</resource>
+		<resource name="settings_windowscapture">ဝင်းဒိုးပုံဖမ်း</resource>
+		<resource name="settings_zoom">မှန်ဘီလူးကိုပြပါ</resource>
+		<resource name="tooltip_firststart">Right-click here or press the {0} key.</resource>
+		<resource name="update_found">ဂရင်းရှော့ဗားရှင်းအသစ်ရနိုင်ပါပြီ! Greenshot{0} ကိုသင်ဒေါင်းလုတ်ဆွဲချင်ပါသလား?</resource>
+		<resource name="wait_ie_capture">Please wait while the page in Internet Explorer is captured...</resource>
+		<resource name="warning">သတိပေးချက်</resource>
+		<resource name="warning_hotkeys">The hotkey(s) "{0}" could not be registered. This problem is probably caused by another tool claiming usage of the same hotkey(s)! You could either change your hotkey settings or deactivate/change the software making use of the hotkey(s).
+
+All Greenshot features still work directly from the tray icon context menu without hotkeys.</resource>
+		<resource name="WindowCaptureMode.Aero">စိတ်ကြိုက်အရောင်ကိုသုံးစွဲရန်</resource>
+		<resource name="WindowCaptureMode.AeroTransparent">Preserve transparency</resource>
+		<resource name="WindowCaptureMode.Auto">အလိုအလျောက်စနစ်</resource>
+		<resource name="WindowCaptureMode.GDI">မူရင်းအရောင်များကိုသုံးရန်</resource>
+		<resource name="WindowCaptureMode.Screen">ပြသထားတဲ့အတိုင်း</resource>
+	</resources>
+</language>

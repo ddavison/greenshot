@@ -1,0 +1,72 @@
+﻿<gpc:SettingsPage x:Class="Greenshot.Configuration.Pages.CaptureSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:gpc="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+      xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+      xmlns:gc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+      xmlns:gp="clr-namespace:Greenshot.Plugin;assembly=GreenshotPlugin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="450" Title="{g:Translate settings_capture}">
+    <gpc:SettingsPage.Resources>
+		<g:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+        <g:AndBooleanConverter x:Key="AndBooleanConverter" />
+        <g:ColorConverter x:Key="ColorConverter" />
+        <g:HasEnumValueConverter x:Key="HasEnumValueConverter" />
+    </gpc:SettingsPage.Resources>
+    <StackPanel>
+        <GroupBox Header="{g:Translate settings_capture}">
+            <StackPanel Orientation="Vertical">
+                <gpc:SettingsCheckBox ConfigProperty="CaptureMousepointer" LanguageKey="settings_capture_mousepointer" IsChecked="{Binding CoreConfig.CaptureMousepointer}"/>
+                <gpc:SettingsCheckBox ConfigProperty="PlayCameraSound" LanguageKey="settings_playsound"/>
+                <gpc:SettingsCheckBox ConfigProperty="ShowTrayNotification" LanguageKey="settings_shownotify"/>
+                <gpc:SettingsCheckBox ConfigProperty="ZoomerEnabled" LanguageKey="settings_zoom"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="{g:Translate settings_iecapture}">
+            <gpc:SettingsCheckBox ConfigProperty="IECapture" LanguageKey="settings_iecapture"/>
+        </GroupBox>
+        <GroupBox Header="{g:Translate settings_windowscapture}">
+            <StackPanel Orientation="Vertical">
+                <RadioButton Name="interactiveWindowCaptureModeRadio" Content="{g:Translate settings_capture_windows_interactive}" GroupName="windowCapture" Style="{StaticResource SettingsControl}"/>
+                <DockPanel>
+                    <Button Click="Button_Color" DockPanel.Dock="Right" Margin="5,0,0,0">
+                        <Button.IsEnabled>
+                            <MultiBinding Converter="{StaticResource AndBooleanConverter}">
+                                <Binding ElementName="windowCaptureMode" Path="SelectedValue" Converter="{StaticResource HasEnumValueConverter}" ConverterParameter="Aero"/>
+                                <Binding Path="IsChecked" ElementName="windowCaptureModeRadio" />
+                                <Binding Path="CoreConfig[DWMBackgroundColor].IsEditable" />
+                            </MultiBinding>
+                        </Button.IsEnabled>
+                        <StackPanel>
+                            <Image Source="palette.png" Stretch="None"/>
+                            <Rectangle Height="5" >
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="{Binding CoreConfig.DWMBackgroundColor, Converter={StaticResource ColorConverter}}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                        </StackPanel>
+                    </Button>
+                    <gpc:SettingsComboBox Name="windowCaptureMode" Width="150" DockPanel.Dock="Right" EnumType="{x:Type gc:WindowCaptureMode}" ConfigProperty="WindowCaptureMode" DependsOnIsChecked="windowCaptureModeRadio"/>
+                    <RadioButton Name="windowCaptureModeRadio" GroupName="windowCapture" IsChecked="{Binding ElementName=interactiveWindowCaptureModeRadio, Path=IsChecked, Converter={StaticResource InverseBooleanConverter}}" Content="{g:Translate settings_window_capture_mode}" Style="{StaticResource SettingsControl}"/>
+                </DockPanel>
+                <gpc:SettingsCheckBox ConfigProperty="ThumnailPreview" LanguageKey="expertsettings_thumbnailpreview"/>
+            </StackPanel>
+        </GroupBox>
+		<GroupBox Header="Screen">
+			<DockPanel>
+                <TextBox Text="{Binding CoreConfig.ScreenToCapture}" Width="20" DockPanel.Dock="Right"  Margin="5,0,0,0">
+                    <TextBox.IsEnabled>
+                        <MultiBinding Converter="{StaticResource AndBooleanConverter}">
+                            <Binding ElementName="screenCaptureMode" Path="SelectedValue" Converter="{StaticResource HasEnumValueConverter}" ConverterParameter="Fixed"/>
+                            <Binding Path="CoreConfig[ScreenToCapture].IsEditable" />
+                        </MultiBinding>
+                    </TextBox.IsEnabled>
+                </TextBox>
+                <gpc:SettingsComboBox Name="screenCaptureMode" Width="150" DockPanel.Dock="Right" EnumType="{x:Type gp:ScreenCaptureMode}" ConfigProperty="ScreenCaptureMode"/>
+				<Label Content="Screen capture mode" DockPanel.Dock="Left"/>
+			</DockPanel>
+		</GroupBox>
+	</StackPanel>
+</gpc:SettingsPage>

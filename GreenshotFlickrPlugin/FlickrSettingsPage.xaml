@@ -1,0 +1,26 @@
+﻿<gcs:SettingsPage x:Class="GreenshotFlickrPlugin.FlickrSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+    xmlns:flickr="clr-namespace:GreenshotFlickrPlugin"
+	Title="{g:Translate flickr.settings_title}">
+	<StackPanel>
+        <DockPanel>
+            <Label Content="{g:Translate flickr.label_upload_format}" DockPanel.Dock="Left"/>
+            <gcs:SettingsComboBox DockPanel.Dock="Right" EnumType="{x:Type gsc:OutputFormat}" ConfigProperty="UploadFormat" ConfigPath="Config"/>
+        </DockPanel>
+        <DockPanel>
+            <Label Content="{g:Translate flickr.label_SafetyLevel}" DockPanel.Dock="Left"/>
+            <gcs:SettingsComboBox DockPanel.Dock="Right" EnumType="{x:Type flickr:SafetyLevel}" ConfigProperty="SafetyLevel" ConfigPath="Config"/>
+        </DockPanel>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="AfterUploadLinkToClipBoard" LanguageKey="flickr.label_AfterUploadLinkToClipBoard" />
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="HiddenFromSearch" LanguageKey="flickr.label_HiddenFromSearch" />
+        <DockPanel>
+            <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="IsPublic" LanguageKey="flickr.public" />
+            <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="IsFamily" LanguageKey="flickr.family" />
+            <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="IsFriend" LanguageKey="flickr.friend" />
+        </DockPanel>
+    </StackPanel>
+</gcs:SettingsPage>

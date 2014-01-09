@@ -1,0 +1,17 @@
+﻿<gcs:SettingsPage x:Class="GreenshotOCRPlugin.OCRSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+    xmlns:ocr="clr-namespace:GreenshotOCRPlugin"
+	Title="{g:Translate ocr.settings_title}">
+	<StackPanel>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="Orientimage" LanguageKey="ocr.orient_image" />
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="StraightenImage" LanguageKey="ocr.straighten_image" />
+        <DockPanel>
+            <Label Content="{g:Translate ocr.language}" DockPanel.Dock="Left"/>
+            <gcs:SettingsComboBox DockPanel.Dock="Right" EnumType="{x:Type ocr:ModiLanguage}" ConfigProperty="Language" ConfigPath="Config"/>
+        </DockPanel>
+    </StackPanel>
+</gcs:SettingsPage>

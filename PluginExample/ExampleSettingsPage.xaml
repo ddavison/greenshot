@@ -1,0 +1,13 @@
+﻿<gcs:SettingsPage x:Class="PluginExample.PluginExampleSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+	Title="Example Plugin settings">
+
+	<StackPanel>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="AnnotationProcessor" Content="Annotation processor"/>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="GreyScaleProcessor" Content="Grayscale processor"/>
+    </StackPanel>
+</gcs:SettingsPage>

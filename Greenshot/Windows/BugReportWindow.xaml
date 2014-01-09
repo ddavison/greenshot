@@ -1,0 +1,24 @@
+﻿<Window x:Class="Greenshot.Windows.BugReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+        Title="{g:Translate bugreport_title}" Height="490" Width="544" Icon="/GreenshotPlugin;component/WPF/Greenshot.ico">
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Grid.Row="1" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="400" TextWrapping="Wrap" Text="{g:Translate bugreport_info}" />
+            <Label Margin="10" >
+                <Hyperlink NavigateUri="http://getgreenshot.org/tickets/" RequestNavigate="Hyperlink_RequestNavigate">
+                    http://getgreenshot.org/tickets/
+                </Hyperlink>
+            </Label>
+        </StackPanel>
+        <TextBox Grid.Row="1" IsReadOnly="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="400" Margin="10" TextWrapping="Wrap" Text="{Binding ExceptionText}" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+    </Grid>
+</Window>

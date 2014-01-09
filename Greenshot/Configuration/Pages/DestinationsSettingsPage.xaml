@@ -1,0 +1,31 @@
+﻿<my:SettingsPage x:Class="Greenshot.Configuration.Pages.DestinationsSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:my="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="450" Height="Auto"
+	Title="{g:Translate settings_destination_picker}">
+    <my:SettingsPage.Resources>
+        <g:ImageConverter x:Key="imageConverter" />
+        <DataTemplate x:Key="destinationTemplate">
+            <CheckBox IsChecked="{Binding IsSelected}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Destination.DisplayIcon, Converter={StaticResource imageConverter}}" Stretch="None"/>
+                    <Label Content="{Binding Destination.Description}" FontSize="11"/>
+                </StackPanel>
+            </CheckBox>
+		</DataTemplate>
+    </my:SettingsPage.Resources>
+
+    <Grid Name="myGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Content="Selected destinations" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center"/>
+        <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Destinations}" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemTemplate="{StaticResource destinationTemplate}" Margin="5,0" />
+    </Grid>
+</my:SettingsPage>

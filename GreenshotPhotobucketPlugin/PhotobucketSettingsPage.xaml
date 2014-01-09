@@ -1,0 +1,13 @@
+﻿<gcs:SettingsPage x:Class="GreenshotPhotobucketPlugin.PhotobucketSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+	Title="{g:Translate photobucket.settings_title}">
+	<StackPanel>
+        <g:ExportSettingsControl HasFilenamePattern="False"/>
+        <g:ExportSettingsControl HasFilenamePattern="True"/>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="UsePageLink" LanguageKey="photobucket.use_page_link" />
+    </StackPanel>
+</gcs:SettingsPage>

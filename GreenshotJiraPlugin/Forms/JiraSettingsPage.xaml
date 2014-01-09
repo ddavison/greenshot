@@ -1,0 +1,22 @@
+﻿<gcs:SettingsPage x:Class="GreenshotJiraPlugin.JiraSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+	Title="{g:Translate jira.settings_title}">
+	<StackPanel>
+        <DockPanel>
+            <gcs:SettingsTextBox ConfigProperty="Url" ConfigPath="Config" DockPanel.Dock="Right" Width="300"/>
+            <Label Content="{g:Translate jira.label_url}" />
+        </DockPanel>
+        <!--DockPanel>
+            <TextBox Text="{Binding Config.Timeout}"  DockPanel.Dock="Right"  Width="100"/>
+            <Label Content="{g:Translate jira.label_timeout}" />
+        </DockPanel-->
+        <DockPanel>
+            <Label Content="{g:Translate jira.label_upload_format}" DockPanel.Dock="Left"/>
+            <gcs:SettingsComboBox DockPanel.Dock="Right" EnumType="{x:Type gsc:OutputFormat}" ConfigProperty="UploadFormat" ConfigPath="Config" />
+        </DockPanel>
+	</StackPanel>
+</gcs:SettingsPage>

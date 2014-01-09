@@ -1,0 +1,19 @@
+﻿<gcs:SettingsPage x:Class="GreenshotBoxPlugin.BoxSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+	Title="{g:Translate box.settings_title}">
+    <gcs:SettingsPage.Resources>
+        <g:EnumDisplayer Type="{x:Type gsc:OutputFormat}" x:Key="outputFormats"/>
+    </gcs:SettingsPage.Resources>
+
+	<StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{g:Translate box.label_upload_format}" />
+            <ComboBox ItemsSource="{Binding Source={StaticResource outputFormats},Path=DisplayValues}" SelectedValue="{Binding Config.UploadFormat}"  IsEnabled="{Binding Config[UploadFormat].IsEditable}" SelectedValuePath="Key" DisplayMemberPath="Value"/>
+        </StackPanel>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="AfterUploadLinkToClipBoard" LanguageKey="box.label_AfterUploadLinkToClipBoard" />
+    </StackPanel>
+</gcs:SettingsPage>

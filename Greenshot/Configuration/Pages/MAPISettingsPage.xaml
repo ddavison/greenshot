@@ -1,0 +1,30 @@
+﻿<gcs:SettingsPage x:Class="Greenshot.Configuration.Pages.MAPISettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+	Title="{g:Translate EmailFormat.MAPI}">
+	<StackPanel>
+        <GroupBox Header="{g:Translate EmailFormat.MAPI}" >
+            <StackPanel>
+                <DockPanel>
+                    <gcs:SettingsTextBox ConfigProperty="MailApiSubjectPattern" DockPanel.Dock="Right" Width="100"/>
+                    <Label Content="{g:Translate office.outlook_subject_pattern}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsTextBox ConfigProperty="MailApiTo" DockPanel.Dock="Right" Width="100"/>
+                    <Label Content="{g:Translate office.outlook_emailto}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsTextBox ConfigProperty="MailApiCC" DockPanel.Dock="Right" Width="100"/>
+                    <Label Content="{g:Translate office.outlook_emailcc}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsTextBox ConfigProperty="MailApiBCC" DockPanel.Dock="Right" Width="100"/>
+                    <Label Content="{g:Translate office.outlook_emailbcc}" />
+                </DockPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</gcs:SettingsPage>

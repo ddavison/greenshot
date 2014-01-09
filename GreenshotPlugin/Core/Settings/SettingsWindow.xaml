@@ -1,0 +1,78 @@
+﻿<Window x:Class="GreenshotPlugin.Core.Settings.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:g="clr-namespace:GreenshotPlugin.WPF"
+        Title="{g:Translate settings_title}" Height="600" Width="650" ResizeMode="NoResize" Icon="/GreenshotPlugin;component/WPF/Greenshot.ico" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ControlTemplate TargetType="Frame" x:Key="frameTemplate">
+            <DockPanel LastChildFill="True">
+                <DockPanel LastChildFill="True" DockPanel.Dock="Top">
+                    <Button Command="{x:Static NavigationCommands.BrowseBack}" IsEnabled="{TemplateBinding CanGoBack}" DockPanel.Dock="Right" >
+                        <Image Source="arrow.png" Stretch="None" />
+                    </Button>
+                    <Button Command="{x:Static NavigationCommands.BrowseForward}" IsEnabled="{TemplateBinding CanGoForward}" DockPanel.Dock="Right">
+                        <Image Source="arrow-180.png" Stretch="None" />
+                    </Button>
+                    <Label Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content.Title}" FontWeight="ExtraBold" Height="26"/>
+                </DockPanel>
+                <Separator DockPanel.Dock="Top"/>
+                <ContentPresenter DockPanel.Dock="Top"/>
+            </DockPanel>
+        </ControlTemplate>
+        <BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+    </Window.Resources>
+    <Window.Background>
+        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Grid.Row="0" BorderThickness="0,0,1,0" BorderBrush="Black" Background="White">
+            <DockPanel >
+                <Grid DockPanel.Dock="Top" Margin="10,2">
+                    <TextBox Grid.Column="0" Name="FilterBox" KeyUp="Filter_KeyUp"/>
+                    <Button HorizontalAlignment="Right" Width="10" Height="18" Grid.Column="1" FontSize="8" Content="X" Background="Transparent" BorderThickness="0" Margin="0,0,2,0" Click="Clear_Click"/>
+                </Grid>
+                <TreeView Name="SettingsTreeView" DockPanel.Dock="Top" ItemsSource="{Binding SettingsTree}" SelectedItemChanged="TreeView_SelectedItemChanged" BorderThickness="0,0,0,0" >
+                    <!-- How are our SettingsTreeItem items displayed in the tree -->
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding ChildrenSortedByText}">
+                            <TextBlock Text="{Binding Text}" />
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                    <!-- Make sure only thos SettingsTreeItem are Visible where Visible is set to true-->
+                    <TreeView.ItemContainerStyle >
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="Visibility" Value="{Binding Visible, Converter={StaticResource booleanToVisibilityConverter}}" />
+                            <Setter Property="FontWeight" Value="Normal" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Marked}" Value="True">
+                                    <Setter Property="FontWeight" Value="ExtraBold" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Expanded}" Value="True">
+                                    <Setter Property="IsExpanded" Value="True" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TreeView.ItemContainerStyle>
+                </TreeView>
+            </DockPanel>
+        </Border>
+        <!-- The frame is were the SettingsPage is opened -->
+        <Frame Name="CurrentSettingsPage" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" Template="{StaticResource frameTemplate}" NavigationUIVisibility="Visible" Navigating="CurrentSettingsPage_Navigating" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
+        <CheckBox Name="Expert" Grid.Row="1" Grid.Column="0" Content="Show expert settings" VerticalAlignment="Center" Margin="5" IsChecked="{Binding CoreConfig.ShowExpertSettings}" IsEnabled="{Binding CoreConfig[ShowExpertSettings].IsEditable}" Visibility="{Binding CoreConfig.ShowExpertCheckbox, Converter={StaticResource booleanToVisibilityConverter}}"/>
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <Separator Margin="0,0,0,0"  DockPanel.Dock="Top"/>
+            <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                <Button Content="{g:Translate CANCEL}" IsCancel="true" Width="100" Click="Cancel_Click" Margin="5,5,5,5" DockPanel.Dock="Right"/>
+                <Button Content="{g:Translate OK}" Width="100" Click="OK_Click" Margin="5,5,5,5" DockPanel.Dock="Right"/>
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

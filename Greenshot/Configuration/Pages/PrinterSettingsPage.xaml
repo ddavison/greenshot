@@ -1,0 +1,33 @@
+﻿<gcs:SettingsPage x:Class="Greenshot.Configuration.Pages.PrinterSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+      xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+      xmlns:gc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+      xmlns:gp="clr-namespace:Greenshot.Plugin;assembly=GreenshotPlugin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="450" Title="{g:Translate settings_printer}">
+    <StackPanel>
+		<GroupBox Header="{g:Translate printoptions_layout}">
+            <StackPanel Orientation="Vertical">
+                <gcs:SettingsCheckBox ConfigProperty="OutputPrintAllowShrink" LanguageKey="printoptions_allowshrink" />
+                <gcs:SettingsCheckBox ConfigProperty="OutputPrintAllowEnlarge" LanguageKey="printoptions_allowenlarge" />
+                <gcs:SettingsCheckBox ConfigProperty="OutputPrintAllowRotate" LanguageKey="printoptions_allowrotate" />
+                <gcs:SettingsCheckBox ConfigProperty="OutputPrintCenter" LanguageKey="printoptions_allowcenter" />
+                <gcs:SettingsCheckBox Name="PrintFooter" ConfigProperty="OutputPrintFooter" LanguageKey="printoptions_timestamp" />
+                <gcs:SettingsTextBox ConfigProperty="OutputPrintFooterPattern" DependsOnIsChecked="PrintFooter"/>
+            </StackPanel>
+        </GroupBox>
+		<GroupBox Header="{g:Translate printoptions_colors}">
+			<StackPanel Orientation="Vertical">
+                <gcs:SettingsRadioButton Name="PrintColorRadio" LanguageKey="printoptions_printcolor" GroupName="coloroptions"/>
+                <gcs:SettingsRadioButton ConfigProperty="OutputPrintGrayscale" LanguageKey="printoptions_printgrayscale" GroupName="coloroptions"/>
+                <gcs:SettingsRadioButton ConfigProperty="OutputPrintMonochrome" LanguageKey="printoptions_printmonochrome" GroupName="coloroptions"/>
+                <gcs:SettingsCheckBox ConfigProperty="OutputPrintInverted" LanguageKey="printoptions_inverted" />
+            </StackPanel>
+		</GroupBox>
+        <gcs:SettingsCheckBox ConfigProperty="OutputPrintPromptOptions" LanguageKey="settings_alwaysshowprintoptionsdialog" />
+	</StackPanel>
+</gcs:SettingsPage>

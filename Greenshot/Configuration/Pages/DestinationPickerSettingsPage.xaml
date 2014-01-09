@@ -1,0 +1,39 @@
+﻿<my:SettingsPage x:Class="Greenshot.Configuration.Pages.DestinationPickerSettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:my="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="450" Height="Auto"
+	Title="{g:Translate settings_destination_picker}">
+    <my:SettingsPage.Resources>
+        <g:ImageConverter x:Key="imageConverter" />
+        <DataTemplate x:Key="destinationTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding DisplayIcon, Converter={StaticResource imageConverter}}" Stretch="None"/>
+                <Label Content="{Binding Description}" FontSize="11"/>
+            </StackPanel>
+		</DataTemplate>
+    </my:SettingsPage.Resources>
+
+    <Grid Name="myGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="Available destinations" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+        <Label Content="Selected destinations" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center"/>
+        <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding AvailableDestinations}" Name="listBox1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"
+            g:DragDropHelper.IsDragSource="true" g:DragDropHelper.IsDropTarget="true" g:DragDropHelper.DragDropTemplate="{StaticResource destinationTemplate}" ItemTemplate="{StaticResource destinationTemplate}" Margin="5,0">
+        </ListView>
+        <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{Binding SelectedDestinations}" Name="listBox2" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"
+             g:DragDropHelper.IsDragSource="true" g:DragDropHelper.IsDropTarget="true" g:DragDropHelper.DragDropTemplate="{StaticResource destinationTemplate}" ItemTemplate="{StaticResource destinationTemplate}" Margin="5,0">
+        </ListView>
+    </Grid>
+</my:SettingsPage>

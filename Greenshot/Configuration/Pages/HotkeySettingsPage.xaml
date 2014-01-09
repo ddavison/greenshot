@@ -1,0 +1,37 @@
+﻿<gcs:SettingsPage x:Class="Greenshot.Configuration.Pages.HotkeySettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="{g:Translate hotkeys}">
+    <StackPanel>
+        <GroupBox Header="{g:Translate hotkeys}">
+            <StackPanel>
+                <DockPanel>
+                    <gcs:SettingsHotkeyTextBox ConfigProperty="FullscreenHotkey" DockPanel.Dock="Right" Width="160" GotFocus="SettingsPage_GotFocus" LostFocus="SettingsPage_LostFocus"/>
+                    <Label Content="{g:Translate contextmenu_capturefullscreen}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsHotkeyTextBox ConfigProperty="WindowHotkey" DockPanel.Dock="Right" Width="160" GotFocus="SettingsPage_GotFocus" LostFocus="SettingsPage_LostFocus"/>
+                    <Label Content="{g:Translate contextmenu_capturewindow}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsHotkeyTextBox ConfigProperty="RegionHotkey" DockPanel.Dock="Right" Width="160" GotFocus="SettingsPage_GotFocus" LostFocus="SettingsPage_LostFocus"/>
+                    <Label Content="{g:Translate contextmenu_capturearea}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsHotkeyTextBox ConfigProperty="LastregionHotkey" DockPanel.Dock="Right" Width="160" GotFocus="SettingsPage_GotFocus" LostFocus="SettingsPage_LostFocus"/>
+                    <Label Content="{g:Translate contextmenu_capturelastregion}" />
+                </DockPanel>
+                <DockPanel>
+                    <gcs:SettingsHotkeyTextBox ConfigProperty="IEHotkey" DockPanel.Dock="Right" Width="160" GotFocus="SettingsPage_GotFocus" LostFocus="SettingsPage_LostFocus"/>
+                    <Label Content="{g:Translate contextmenu_captureie}" />
+                </DockPanel>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</gcs:SettingsPage>

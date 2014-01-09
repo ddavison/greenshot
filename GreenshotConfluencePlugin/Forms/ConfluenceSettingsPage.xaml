@@ -1,0 +1,27 @@
+﻿<gcs:SettingsPage x:Class="GreenshotConfluencePlugin.ConfluenceSettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gscp="clr-namespace:GreenshotConfluencePlugin"
+    xmlns:gcs="clr-namespace:GreenshotPlugin.Core.Settings;assembly=GreenshotPlugin"
+    xmlns:g="clr-namespace:GreenshotPlugin.WPF;assembly=GreenshotPlugin"
+    xmlns:gsc="clr-namespace:GreenshotPlugin.Core;assembly=GreenshotPlugin"
+	Title="{g:Translate confluence.plugin_settings}"><!-- SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="/GreenshotConfluencePlugin;component/Images/Confluence.ico" -->
+
+	<StackPanel>
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="IncludePersonSpaces" LanguageKey="confluence.include_person_spaces" />
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="OpenPageAfterUpload" LanguageKey="confluence.open_page_after_upload" />
+        <gcs:SettingsCheckBox ConfigPath="Config" ConfigProperty="CopyWikiMarkupForImageToClipboard" LanguageKey="confluence.copy_wikimarkup" />
+		<DockPanel>
+            <gcs:SettingsTextBox ConfigProperty="Url" ConfigPath="Config" DockPanel.Dock="Right" Width="300"/>
+            <Label Content="{g:Translate confluence.label_url}" />
+        </DockPanel>
+        <DockPanel>
+            <gcs:SettingsTextBox ConfigProperty="Timeout" ConfigPath="Config" DockPanel.Dock="Right" Width="70"/>
+            <Label Content="{g:Translate confluence.label_timeout}" />
+        </DockPanel>
+		<DockPanel>
+			<Label Content="{g:Translate confluence.upload_format}" DockPanel.Dock="Left"/>
+            <gcs:SettingsComboBox DockPanel.Dock="Right" EnumType="{x:Type gsc:OutputFormat}" ConfigProperty="UploadFormat" ConfigPath="Config"/>
+        </DockPanel>
+	</StackPanel>
+</gcs:SettingsPage>
